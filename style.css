@@ -1,87 +1,357 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SpiritNet - Create Universe</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-    <!-- Top Navigation Bar -->
-    <header class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <div class="logo-triangle">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2L2 20h20L12 2z"/>
-                    </svg>
-                </div>
-                <span class="logo-text">SpiritNet</span>
-            </div>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-            <nav class="nav-menu">
-                <a href="#" class="nav-item">Home</a>
-                <a href="#" class="nav-item">Shop</a>
-                <a href="#" class="nav-item">Community</a>
-                <a href="#" class="nav-item">About Us</a>
-            </nav>
+body {
+    font-family: 'Inter', sans-serif;
+    background: #ffffff;
+    overflow-x: hidden;
+}
 
-            <div class="nav-right">
-                <a href="#" class="nav-item">Title</a>
-                <a href="#" class="nav-item">Log</a>
-            </div>
-        </div>
-    </header>
+/* Navigation Bar */
+.navbar {
+    background: linear-gradient(135deg, #1F3C88 0%, #2A4DB8 100%);
+    padding: 15px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 100;
+}
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">You want create Universe?</h1>
-            <div class="hero-buttons">
-                <button class="cta-button primary">Register</button>
-                <button class="cta-button secondary">Learn More</button>
-            </div>
-        </div>
-        <div class="stars"></div>
-    </section>
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
 
-    <!-- Products Section -->
-    <section class="products">
-        <div class="section-divider"></div>
-        <div class="products-container">
-            <div class="section-title">
-                <div class="title-line"></div>
-                <h2>Products</h2>
-                <div class="title-line"></div>
-            </div>
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
-            <div class="product-grid">
-                <div class="product-card">
-                    <div class="product-image"></div>
-                    <div class="product-price">5. 000<span class="currency">RUB</span></div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image"></div>
-                    <div class="product-price">5. 000<span class="currency">RUB</span></div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image"></div>
-                    <div class="product-price">5. 000<span class="currency">RUB</span></div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image"></div>
-                    <div class="product-price">5. 000<span class="currency">RUB</span></div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image"></div>
-                    <div class="product-price">5. 000<span class="currency">RUB</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
+.logo-triangle {
+    color: white;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
+.logo-text {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-item {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 0;
+    transition: all 0.3s ease;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.nav-item:hover {
+    color: #FFD700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.nav-right {
+    display: flex;
+    gap: 30px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #0F1B3C 0%, #1A2B5C 50%, #2D4A85 100%);
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: -50px;
+    z-index: 50;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(2px 2px at 20% 30%, #fff, transparent),
+        radial-gradient(2px 2px at 40% 70%, rgba(255,255,255,0.8), transparent),
+        radial-gradient(1px 1px at 90% 40%, #fff, transparent),
+        radial-gradient(1px 1px at 50% 50%, rgba(255,255,255,0.6), transparent),
+        radial-gradient(2px 2px at 80% 10%, #fff, transparent),
+        radial-gradient(1px 1px at 10% 80%, rgba(255,255,255,0.7), transparent);
+    background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px, 400px 400px, 200px 200px;
+    animation: stars 120s linear infinite;
+}
+
+@keyframes stars {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-100px); }
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 10;
+    position: relative;
+}
+
+.hero-title {
+    font-size: 48px;
+    font-weight: 700;
+    color: #E6E6FA;
+    margin-bottom: 40px;
+    text-shadow: 
+        0 0 20px rgba(138, 43, 226, 0.8),
+        0 0 40px rgba(138, 43, 226, 0.6),
+        0 0 60px rgba(138, 43, 226, 0.4),
+        0 2px 4px rgba(0, 0, 0, 0.5);
+    animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 
+            0 0 20px rgba(138, 43, 226, 0.8),
+            0 0 40px rgba(138, 43, 226, 0.6),
+            0 0 60px rgba(138, 43, 226, 0.4),
+            0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    to {
+        text-shadow: 
+            0 0 30px rgba(138, 43, 226, 1),
+            0 0 50px rgba(138, 43, 226, 0.8),
+            0 0 70px rgba(138, 43, 226, 0.6),
+            0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.cta-button {
+    padding: 15px 35px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button.primary,
+.cta-button.secondary {
+    background: linear-gradient(135deg, #FF8C00 0%, #FFD700 100%);
+    color: #000;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cta-button:hover::before {
+    opacity: 1;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 12px 25px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(255, 215, 0, 0.5);
+}
+
+/* Products Section */
+.products {
+    background: linear-gradient(135deg, #A5ADD5 0%, #B8BFDD 50%, #CAD0E5 100%);
+    padding: 80px 0 60px 0;
+    position: relative;
+}
+
+.section-divider {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(135deg, #A5ADD5 0%, #B8BFDD 50%, #CAD0E5 100%);
+    clip-path: ellipse(100% 100% at 50% 100%);
+    z-index: 60;
+}
+
+.products-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    gap: 30px;
+}
+
+.title-line {
+    flex: 1;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.8);
+    max-width: 200px;
+}
+
+.section-title h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+    justify-items: center;
+}
+
+.product-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    width: 180px;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+.product-image {
+    width: 100%;
+    height: 140px;
+    background: #D3D3D3;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.product-price {
+    padding: 15px;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+}
+
+.currency {
+    font-size: 12px;
+    font-weight: 400;
+    margin-left: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+    
+    .hero-title {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-menu {
+        gap: 20px;
+    }
+    
+    .nav-right {
+        gap: 20px;
+    }
+    
+    .hero-title {
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .product-card {
+        width: 160px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 0 15px;
+    }
+    
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .hero-title {
+        font-size: 24px;
+    }
+    
+    .section-title h2 {
+        font-size: 28px;
+    }
+    
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .title-line {
+        max-width: 80px;
+    }
+}
